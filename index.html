@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Currency — being aware of discipline history</title>
+<meta name="description" content="An interactive timeline of graphic design history, from movable type to generative AI, across art, technology, society and music.">
+<link rel="stylesheet" href="assets/modernist.css">
+<link rel="stylesheet" href="assets/timeline.css">
+</head>
+<body>
+<a class="skip" href="#scroller">Skip to timeline</a>
+<div class="app" id="app">
+  <header class="top">
+    <h1 class="brand">Currency <span>— being aware of discipline history</span></h1>
+    <p class="hint" id="hint"><span class="hint-key">Click any moment to open it · ← → move between eras</span><span class="hint-touch">Tap any moment to open it</span></p>
+    <button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="dialog">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+      <span class="sr-only">Settings</span>
+    </button>
+  </header>
+  <main class="scroller" id="scroller" tabindex="-1" aria-label="Timeline">
+    <div class="track" id="track"></div>
+  </main>
+</div>
+
+<dialog class="moment" id="moment" aria-labelledby="mTitle" aria-describedby="mBody">
+  <div class="m-top">
+    <p class="m-lane" id="mLane"></p>
+    <p class="m-era" id="mEra"></p>
+    <p class="m-pos" id="mPos"></p>
+    <button type="button" class="m-close" id="mClose">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <span class="sr-only">Close</span>
+    </button>
+  </div>
+  <div class="m-main">
+    <div class="m-text">
+      <p class="m-year" id="mYear"></p>
+      <h2 class="m-title" id="mTitle"></h2>
+      <p class="m-body" id="mBody"></p>
+      <p class="m-ex" id="mEx"><span class="m-ex-k">Look at</span> <span id="mExText"></span></p>
+    </div>
+    <div class="m-imgcol">
+      <figure class="m-img" id="mImg"></figure>
+    </div>
+  </div>
+  <nav class="m-foot" aria-label="Moments">
+    <button type="button" class="m-step m-prev" id="mPrev"><span class="m-step-k">← Previous</span><span class="m-step-t" id="mPrevT"></span></button>
+    <div class="m-meanwhile" id="mMeanwhile">
+      <h3 class="m-step-k" id="mwHead">Meanwhile</h3>
+      <ul class="m-mw-grid" id="mMwGrid" aria-labelledby="mwHead"></ul>
+    </div>
+    <button type="button" class="m-step m-next" id="mNext"><span class="m-step-k">Next →</span><span class="m-step-t" id="mNextT"></span></button>
+  </nav>
+  <div class="sr-only" id="mLive" aria-live="polite" aria-atomic="true"></div>
+</dialog>
+
+<dialog class="dialog settings" id="settings" aria-labelledby="sTitle">
+  <form method="dialog">
+    <h2 class="dialog-title" id="sTitle">Settings</h2>
+    <div class="dialog-body settings-body">
+      <fieldset>
+        <legend>Previous and Next step through</legend>
+        <div class="seg">
+          <label class="seg-opt"><input type="radio" name="stepMode" value="All strands">All strands</label>
+          <label class="seg-opt"><input type="radio" name="stepMode" value="Same strand">Same strand</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Moment background</legend>
+        <div class="seg">
+          <label class="seg-opt"><input type="radio" name="overlay" value="deep">Deep red</label>
+          <label class="seg-opt"><input type="radio" name="overlay" value="signal">Signal red</label>
+        </div>
+        <p class="note">Deep red meets WCAG AA contrast for all text. Signal red is brighter but its small text is below AA.</p>
+      </fieldset>
+      <label class="check"><input type="checkbox" name="showMeanwhile"> Show the “Meanwhile” strip</label>
+      <label class="check"><input type="checkbox" name="showMissing"> Mark moments that still need an image</label>
+      <label class="check"><input type="checkbox" name="blackAndWhite"> Show images in black and white</label>
+    </div>
+    <div class="dialog-actions">
+      <button class="btn btn-primary" value="done">Done</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="assets/data.js"></script>
+<script src="assets/timeline.js"></script>
+</body>
+</html>
