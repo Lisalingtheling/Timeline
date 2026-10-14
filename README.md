@@ -38,7 +38,7 @@ If you change a moment's `id`, rename its picture to match.
 ## Viewing and publishing
 
 - **On your computer:** download the repository (**Code → Download ZIP**), unzip it and open `index.html` in a browser. This also works offline at a venue, apart from the font (see below).
-- **Online with GitHub Pages:** in the repository go to **Settings → Pages**, choose **Deploy from a branch**, pick `main` and `/ (root)`, and save. The site appears at `https://lisalingtheling.github.io/Timeline/` within a minute or two, and updates each time you commit.
+- **Online with GitHub Pages:** in the repository go to **Settings → Pages**, choose **Deploy from a branch**, pick `main` and `/ (root)`, and save. The site appears at `https://lisalingtheling.github.io/timeline/` within a minute or two, and updates each time you commit.
 
 The Archivo font loads from Google Fonts, so the venue needs internet access. Without it, the site falls back to the system font.
 
